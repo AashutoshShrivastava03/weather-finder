@@ -1,0 +1,161 @@
+/* App.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #769499, #7d7144) , #f7af42;
+  min-height: 100vh;
+}
+
+/* Center the whole app and make it responsive */
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem; /* padding for spacing on smaller screens */
+  box-sizing: border-box;
+}
+
+
+/* Container for the weather app */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Full width on small screens */
+  max-width: 600px; /* Limit width on larger screens */
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.05); /* subtle transparent background */
+  margin-left: 30rem;
+  margin-right: 30rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* soft shadow for depth */
+}
+
+/* Responsive styles for small screen devices */
+@media (max-width: 480px) {
+  .app-container {
+    padding: 1rem; /* less padding on small devices */
+  }
+}
+
+
+h1 {
+  color: #fff;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+h1:hover{
+  color: #fab348;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+
+.search-box {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  font-size: 1rem;
+  outline: none;
+  background-color: white; /* Makes background white */
+  color: black; /* Default text color */
+  box-shadow: 0 2px 8px rgba(251, 249, 249, 0.1);
+}
+
+/* Placeholder styles */
+.search-box input::placeholder {
+  color: black;            /* Makes placeholder text black */
+  opacity: 1;              /* Ensures full opacity */
+}
+
+
+.search-box button {
+  position: relative; /* Required for hover effect positioning */
+  padding: 0.8rem 1rem;
+  background-color: #ef842d;
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-weight: bold;
+  overflow: hidden; /* Hide the ripple overflow */
+  z-index: 1; /* Ensure text stays above the hover effect */
+  transition: color 0.4s ease;
+  outline: none;
+}
+
+/* Before pseudo-element for the hover ripple effect */
+.search-box button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+  z-index: -1; /* Keeps the ripple below the button text */
+}
+
+/* Hover effect expanding ripple and text color */
+.search-box button:hover::before {
+  width: 250%;
+  height: 600%;
+}
+
+.search-box button:hover {
+  color: #ef842d; /* Change text color on hover */
+  z-index: 2;
+}
+
+
+.suggestions-list {
+  list-style: none;
+  margin-top: 8px;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 100;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.suggestions-list li {
+  padding: 10px;
+  cursor: pointer;
+  color: black;
+  transition: background 0.2s;
+}
+
+.suggestions-list li:hover {
+  background-color: #f1f1f1;
+}
+
+.error-msg {
+  color: #ff0033;
+  font-weight: 500;
+  background: #ffe5e5;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}

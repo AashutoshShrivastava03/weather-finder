@@ -1,0 +1,83 @@
+/* WeatherCard.css */
+
+.weather-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 0.4s ease-in-out;
+  margin-top: 2rem;
+}
+
+.weather-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.weather-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.weather-info img {
+  width: 100px;
+  height: 100px;
+}
+
+/* Paragraphs in weather info section */
+.weather-info p {
+  font-size: 1.2rem; /* larger text size */
+  font-weight: 500; /* medium bold font */
+  color: Black; /* white color text */
+  margin: 0.4rem 0;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* clean and modern font */
+  background: rgba(255, 255, 255, 0.1); /* translucent background */
+  padding: 0.5rem 1rem; /* inner spacing */
+  border-radius: 8px; /* rounded corners */
+  transition: transform 0.2s ease; /* smooth animation effect */
+}
+
+/* Slight zoom-in effect when hovered */
+.weather-info p:hover {
+  transform: scale(1.03);
+}
+
+/* Adjustments for mobile devices */
+@media (max-width: 480px) {
+  .weather-info p {
+    font-size: 1rem; /* smaller text on small screens */
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+
+.weather-info strong {
+  color: #222;
+}
+
+.weather-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
