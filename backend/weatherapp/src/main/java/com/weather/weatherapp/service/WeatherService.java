@@ -1,19 +1,21 @@
 package com.weather.weatherapp.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
 public class WeatherService {
 
-    private final String API_KEY = "39dc5cde7d0ed498a983d2a143586b9d";
+    @Value("${openweathermap.api.key}")
+    private String apiKey;
 
-    private final String BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
+    @Value("${openweathermap.base.url}")
+    private String baseUrl;
 
     public String getWeatherData(String city) {
-        String url = BASE_URL + "?q=" + city + "&appid=" + API_KEY + "&units=metric";
+        String url = baseUrl + "?q=" + city + "&appid=" + apiKey + "&units=metric";
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.getForObject(url, String.class);
     }
-    
 }
