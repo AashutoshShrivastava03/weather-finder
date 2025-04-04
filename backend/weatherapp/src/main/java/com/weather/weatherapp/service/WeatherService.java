@@ -7,15 +7,15 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class WeatherService {
 
-    @Value("${openweathermap.api.key}")
+    @Value("${weather.api.key}") // Fetch API key from application.properties
     private String apiKey;
 
-    @Value("${openweathermap.base.url}")
-    private String baseUrl;
+    private final String BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 
     public String getWeatherData(String city) {
-        String url = baseUrl + "?q=" + city + "&appid=" + apiKey + "&units=metric";
+        String url = BASE_URL + "?q=" + city + "&appid=" + apiKey + "&units=metric";
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.getForObject(url, String.class);
     }
+
 }
