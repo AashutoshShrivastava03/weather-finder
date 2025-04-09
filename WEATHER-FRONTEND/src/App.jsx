@@ -70,7 +70,7 @@ function App() {
   return (
     <div className="app-wrapper">
       <div className="app-container">
-        <h1>🌤️ Weather Finder</h1>
+        <h1>🌤️  Weather Finder</h1>
 
         <div className="search-box">
           <input
