@@ -1,101 +1,43 @@
-# 🌦️ Weather Finder App
+# OAuth2 Google Login + JWT Demo 🚀
 
-A full-stack weather application built using **React (Vite)** on the frontend and **Spring Boot** on the backend. The app allows users to search cities, get real-time weather data, and enjoy smooth UI with loading spinners and autocomplete suggestions.
-
----
-
-## 🔗 Live Demo
-
-🌐 [Live App Link](#) <!-- (To be added after deployment) -->
+This is a **Spring Boot** project where I implemented **Google OAuth2 login** and **JWT-based authentication**.  
+The goal of this project was to **learn and practice secure authentication and authorization in Java backend development**.
 
 ---
 
-## ⚙️ Tech Stack
-
-### Frontend
-- React (Vite)
-- CSS
-- OpenWeatherMap APIs
-
-### Backend
-- Java Spring Boot
-- REST API
-- OpenWeatherMap Integration
-
----
-
-## ✨ Features
-
-- 🌍 City name autocomplete (Geocoding API)
-- 🌦️ Real-time weather data (temperature, condition, etc.)
-- ⚡ Loading spinner for smooth UX
-- 📱 Responsive design
-- 🔄 Integrated backend API for data fetching
+## What I Learned 🎓
+- How to implement **OAuth2.0 login** with Google.  
+- Generating and validating **JWT tokens** for stateless authentication.  
+- Securing APIs with **Spring Security** and **roles-based authorization**.  
+- Handling **stateless authentication** using filters (`OncePerRequestFilter`).  
+- Best practices for **controller separation** (login vs secured endpoints).  
+- Configuring **CORS and CSRF** for frontend-backend communication.  
+- Integrating **Spring Data JPA** with MySQL for storing user details.  
+- Using **RestTemplate** to interact with external APIs.  
+- Understanding **token validation, token expiry, and secure user data handling**.
 
 ---
 
-## 🚀 Getting Started (Run Locally)
+## Features ✨
+- Login using **Google OAuth2.0**  
+- **JWT token generation** for secure APIs  
+- **Role-based secured endpoints**  
+- Stateless authentication  
 
-### 📁 Clone the repository
+---
 
-```bash
-git clone https://github.com/AashutoshShrivastava03/weather-finder.git
-cd weather-finder
-```
+## Endpoints 🔗
+| Method | Endpoint | Description |
+|--------|---------|-------------|
+| GET | `/auth/google/callback?code=` | Exchange Google auth code for JWT |
+| GET | `/api/secure` | Access secured data with JWT |
 
-## 🧩 Frontend Setup
+---
 
-```bash
-cd WEATHER-FRONTEND
-npm install
-npm run dev
-```
+## Tech Stack 🛠
+Java | Spring Boot | Spring Security | OAuth2 | JWT | MySQL | Maven
 
-## ☕ Backend Setup (Spring Boot)
-Make sure you have Java 17+ and Maven installed.
+---
 
-```bash
-cd backend/weatherapp
-./mvnw spring-boot:run
-```
-## 🔐 API Key Setup
-You need an API key from OpenWeatherMap.
-
-Add your key in the following backend file:
-
-```bash
-# backend/weatherapp/src/main/resources/application.properties
-openweathermap.api.key=YOUR_API_KEY_HERE
-```
-## 📁 Folder Structure
-
-```bash
-weather-finder/
-├── WEATHER-FRONTEND/        # React frontend
-│   ├── src/
-│   │   ├── components/
-│   │   ├── assets/
-│   │   └── ...
-│   ├── public/
-│   ├── package.json
-│   └── ...
-├── backend/
-│   └── weatherapp/          # Spring Boot backend
-│       ├── src/
-│       │   ├── main/
-│       │   └── test/
-│       ├── pom.xml
-│       └── ...
-└── README.md
-```
-
-## 🙌 Acknowledgements
-
-+ OpenWeatherMap API 🌐 [https://openweathermap.org/](#)
-+ React
-+ Spring Boot
-
-## 📜 License
-This project is open-source and available for educational and non-commercial use.
-
-### Made with 💙 by Aashutosh Shrivastava
+## Author 👤
+**Aashutosh Shrivastava** – Java Developer | Spring Boot | OAuth2 & JWT Enthusiast
