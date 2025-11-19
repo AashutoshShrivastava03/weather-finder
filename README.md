@@ -1,40 +1,45 @@
 # 🌦️ Weather Finder App
 
-A full-stack weather application built using **React (Vite)** on the frontend and **Spring Boot** on the backend. The app allows users to search cities, get real-time weather data, and enjoy smooth UI with loading spinners and autocomplete suggestions.
+A full-stack weather application built using **React (Vite)** on the frontend and **Spring Boot** on the backend.  
+The app provides real-time weather updates, city autocomplete, and a smooth UI experience.
 
 ---
 
 ## 🔗 Live Demo
 
-🌐 [Live App Link](#) <!-- (To be added after deployment) -->
+🌐 **Frontend:** https://weather-finder-snowy.vercel.app  
+🔌 **Backend API:** https://weather-finder-production.up.railway.app/api/weather?city=Delhi
 
 ---
 
 ## ⚙️ Tech Stack
 
-### Frontend
+### **Frontend**
 - React (Vite)
-- CSS
-- OpenWeatherMap APIs
+- CSS (Custom Styling)
+- OpenWeatherMap Geocoding API
 
-### Backend
-- Java Spring Boot
+### **Backend**
+- Java 21
+- Spring Boot
 - REST API
-- OpenWeatherMap Integration
+- OpenWeatherMap Weather API
 
 ---
 
 ## ✨ Features
 
-- 🌍 City name autocomplete (Geocoding API)
-- 🌦️ Real-time weather data (temperature, condition, etc.)
-- ⚡ Loading spinner for smooth UX
-- 📱 Responsive design
-- 🔄 Integrated backend API for data fetching
+- 🌍 **Live City Autocomplete** (Geocoding API)
+- 🌦️ **Real-time Weather Data** (Temp, humidity, wind, condition)
+- ⚡ **Loading Spinner** for smooth UX
+- 🎨 **Custom Weather Icons**
+- 📱 **Responsive UI**
+- 🔒 **Backend-handled API key** (secure – not exposed on frontend)
 
 ---
 
 ## 🚀 Getting Started (Run Locally)
+
 
 ### 📁 Clone the repository
 
