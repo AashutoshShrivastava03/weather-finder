@@ -24,3 +24,14 @@ dist-ssr
 *.sw?
 
 .env
+```
+
+**Last line mein `.env` add kar do!**
+
+---
+
+## ✅ Backend .gitignore Already Has It:
+
+Backend wala already correct hai:
+```
+.env  ✅

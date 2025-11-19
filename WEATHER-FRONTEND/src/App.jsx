@@ -1,12 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
-import WeatherCard from './components/WeatherCard';
-import Spinner from './components/Spinner';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import WeatherCard from "./components/WeatherCard";
+import Spinner from "./components/Spinner";
 
-const API_KEY = '39dc5cde7d0ed498a983d2a143586b9d';
+// App.jsx mein change karo
+const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
+// Agar missing ho toh error dikha do
+if (!API_KEY) {
+  console.error("VITE_WEATHER_API_KEY is not set!");
+}
 
 function App() {
-  const [city, setCity] = useState('');
+  const [city, setCity] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -26,7 +33,7 @@ function App() {
         const data = await response.json();
         setSuggestions(data);
       } catch (error) {
-        console.error('Error fetching suggestions:', error);
+        console.error("Error fetching suggestions:", error);
       }
     };
 
@@ -43,18 +50,18 @@ function App() {
 
     try {
       const response = await fetch(
-        `http://localhost:8081/api/weather?city=${selectedCity}`
+        `${API_BASE_URL}/api/weather?city=${selectedCity}`
       );
 
       if (!response.ok) {
-        throw new Error('City not found or server error');
+        throw new Error("City not found or server error");
       }
 
       const data = await response.json();
       setWeatherData(data);
       setSuggestions([]);
     } catch (error) {
-      console.error('Error fetching weather:', error);
+      console.error("Error fetching weather:", error);
       setError(error.message);
     }
 
@@ -62,7 +69,7 @@ function App() {
   };
 
   const handleSuggestionClick = (name) => {
-    setCity('');
+    setCity("");
     setSuggestions([]);
     fetchWeather(name);
   };
@@ -70,7 +77,7 @@ function App() {
   return (
     <div className="app-wrapper">
       <div className="app-container">
-        <h1>🌤️  Weather Finder</h1>
+        <h1>🌤️ Weather Finder</h1>
 
         <div className="search-box">
           <input
@@ -78,15 +85,19 @@ function App() {
             placeholder="Enter city name..."
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && fetchWeather(city)}
+            onKeyDown={(e) => e.key === "Enter" && fetchWeather(city)}
           />
           <button onClick={() => fetchWeather(city)}>Search</button>
 
           {suggestions.length > 0 && (
             <ul className="suggestions-list">
               {suggestions.map((item, index) => (
-                <li key={index} onClick={() => handleSuggestionClick(item.name)}>
-                  {item.name}, {item.state ? item.state + ', ' : ''}{item.country}
+                <li
+                  key={index}
+                  onClick={() => handleSuggestionClick(item.name)}
+                >
+                  {item.name}, {item.state ? item.state + ", " : ""}
+                  {item.country}
                 </li>
               ))}
             </ul>
