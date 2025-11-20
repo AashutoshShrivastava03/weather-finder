@@ -4,7 +4,7 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #769499, #7d7144) , #f7af42;
+  background: linear-gradient(to right, #769499, #7d7144), #f7af42;
   min-height: 100vh;
 }
 
@@ -14,7 +14,7 @@ body, html {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 2rem; /* padding for spacing on smaller screens */
+  padding: 2rem;
   box-sizing: border-box;
 }
 
@@ -24,20 +24,62 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%; /* Full width on small screens */
-  max-width: 600px; /* Limit width on larger screens */
+  width: 100%;
+  max-width: 600px;
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.05); /* subtle transparent background */
-  margin-left: 30rem;
-  margin-right: 30rem;
+  background-color: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* soft shadow for depth */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive styles for small screen devices */
-@media (max-width: 480px) {
+/* Responsive styles for tablets and below */
+@media (max-width: 1024px) {
   .app-container {
-    padding: 1rem; /* less padding on small devices */
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  .app-container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Responsive styles for small mobile devices */
+@media (max-width: 480px) {
+  .app-wrapper {
+    padding: 1rem;
+  }
+  
+  .app-container {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .search-box input {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .search-box button {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -56,7 +98,6 @@ h1:hover{
   text-align: center;
 }
 
-
 .search-box {
   position: relative;
   width: 100%;
@@ -72,20 +113,19 @@ h1:hover{
   border-radius: 8px 0 0 8px;
   font-size: 1rem;
   outline: none;
-  background-color: white; /* Makes background white */
-  color: black; /* Default text color */
+  background-color: white;
+  color: black;
   box-shadow: 0 2px 8px rgba(251, 249, 249, 0.1);
 }
 
 /* Placeholder styles */
 .search-box input::placeholder {
-  color: black;            /* Makes placeholder text black */
-  opacity: 1;              /* Ensures full opacity */
+  color: black;
+  opacity: 1;
 }
 
-
 .search-box button {
-  position: relative; /* Required for hover effect positioning */
+  position: relative;
   padding: 0.8rem 1rem;
   background-color: #ef842d;
   color: white;
@@ -93,8 +133,8 @@ h1:hover{
   border-radius: 0 8px 8px 0;
   cursor: pointer;
   font-weight: bold;
-  overflow: hidden; /* Hide the ripple overflow */
-  z-index: 1; /* Ensure text stays above the hover effect */
+  overflow: hidden;
+  z-index: 1;
   transition: color 0.4s ease;
   outline: none;
 }
@@ -111,7 +151,7 @@ h1:hover{
   border-radius: 50%;
   transform: translate(-50%, -50%);
   transition: width 0.4s ease, height 0.4s ease;
-  z-index: -1; /* Keeps the ripple below the button text */
+  z-index: -1;
 }
 
 /* Hover effect expanding ripple and text color */
@@ -121,10 +161,9 @@ h1:hover{
 }
 
 .search-box button:hover {
-  color: #ef842d; /* Change text color on hover */
+  color: #ef842d;
   z-index: 2;
 }
-
 
 .suggestions-list {
   list-style: none;

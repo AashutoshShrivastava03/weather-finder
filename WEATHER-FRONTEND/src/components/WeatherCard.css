@@ -33,31 +33,22 @@
 
 /* Paragraphs in weather info section */
 .weather-info p {
-  font-size: 1.2rem; /* larger text size */
-  font-weight: 500; /* medium bold font */
-  color: Black; /* white color text */
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: Black;
   margin: 0.4rem 0;
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* clean and modern font */
-  background: rgba(255, 255, 255, 0.1); /* translucent background */
-  padding: 0.5rem 1rem; /* inner spacing */
-  border-radius: 8px; /* rounded corners */
-  transition: transform 0.2s ease; /* smooth animation effect */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
 }
 
 /* Slight zoom-in effect when hovered */
 .weather-info p:hover {
   transform: scale(1.03);
 }
-
-/* Adjustments for mobile devices */
-@media (max-width: 480px) {
-  .weather-info p {
-    font-size: 1rem; /* smaller text on small screens */
-    padding: 0.4rem 0.8rem;
-  }
-}
-
 
 .weather-info strong {
   color: #222;
@@ -70,6 +61,72 @@
   margin-bottom: 8px;
 }
 
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  .weather-card {
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .weather-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .weather-info {
+    gap: 1.5rem;
+  }
+
+  .weather-info img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .weather-info p {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .weather-image {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* Mobile devices (480px and below) */
+@media (max-width: 480px) {
+  .weather-card {
+    padding: 1rem;
+    margin-top: 1rem;
+    max-width: 100%;
+  }
+
+  .weather-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .weather-info {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .weather-info img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .weather-info p {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+    margin: 0.2rem 0;
+  }
+
+  .weather-image {
+    width: 60px;
+    height: 60px;
+  }
+}
 
 @keyframes fadeIn {
   from {
